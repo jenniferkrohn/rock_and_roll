@@ -1,0 +1,37 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>Select Songs</h1>
+<%= link_to new_song_path do %> 
+  <span class="glyphicon glyphicon-plus"></span> Add
+<% end %>
+
+
+    <div class="row">
+      <% @songs.each do |song| %>
+        <div class="col-md-6">
+          <div class="well">
+            <h2><%= link_to song.title, song %></h2>
+            <h3>by <%= song.artist.name %></h3>
+            <p>
+              <% song.rating.times do %>
+              <span class="glyphicon glyphicon-star"></span> 
+              <% end %>
+            </p>
+            <p><%= link_to edit_song_path(song) do %>
+              <span class="glyphicon glyphicon-pencil"></span> 
+            <% end %>
+            &nbsp;
+            <%= link_to song, method: :delete, data: { confirm: 'Are you sure?' } do %>
+             <span class="glyphicon glyphicon-trash"></span>
+             <% end %>
+          </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+      
+
+  
+<br>
+
+<%= link_to 'New Song', new_song_path %>

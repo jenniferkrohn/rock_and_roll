@@ -1,0 +1,23 @@
+<h1>Top 5!</h1>
+
+<div class="row">
+		<% @songs.each do |song| %>
+        <div class="col-md-12">
+          <div class="well">
+            <h2><%= link_to song.title, song %></h2>
+            <h3>by <%= song.artist.name %></h3>
+            <p>
+              <% song.rating.times do %>
+              <span class="glyphicon glyphicon-star"></span> 
+              <% end %>
+            </p>
+            <p>
+          </p>
+          </div>
+        </div>
+      <% end %>
+
+
+
+	</div>
+</div>
