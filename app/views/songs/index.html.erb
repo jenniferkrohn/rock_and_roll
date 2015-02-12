@@ -6,8 +6,10 @@
 <% end %>
 
 
-    <div class="row">
-      <% @songs.each do |song| %>
+  
+  <% @songs.each_slice(2) do |songs| %>
+      <div class="row">  
+        <% songs.each do |song| %>
         <div class="col-md-6">
           <div class="well">
             <h2><%= link_to song.title, song %></h2>
@@ -27,6 +29,8 @@
           </p>
           </div>
         </div>
+        <% end %>
+      </div>
       <% end %>
     </div>
       
