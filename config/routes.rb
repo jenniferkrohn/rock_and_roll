@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :artists
 
-
+  get 'pix' => 'rock#pix'
+  
   root 'rock#roll'
 
   # The priority is based upon order of creation: first created -> highest priority.
